@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Hospital Veterinario de Armenia: atención médica integral para tus mascotas. Servicios de consulta, cirugía, diagnóstico y urgencias en Armenia, Colombia. Agenda tu cita por WhatsApp.">
+  <title>Hospital Veterinario de Armenia | Cuidado profesional para tu mascota</title>
+  <!-- Google Fonts: Montserrat + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --white: #ffffff;
+      --verde-fosfo: #b4e33d;        /* verde lima vibrante */
+      --verde-oscuro: #0d3b2e;       /* verde profundo para contraste */
+      --verde-profundo: #08251d;
+      --azul-primario: #1b6b8f;      /* azul confianza */
+      --azul-claro: #e4f0f7;         /* fondo azul suave */
+      --gris-suave: #f4f8fa;
+      --gris-texto: #1e2c35;
+      --sombra: 0 18px 35px -12px rgba(0, 0, 0, 0.08);
+      --transicion: 0.25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--gris-texto);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--verde-oscuro);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 24px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== BOTONES ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transicion);
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary {
+      background-color: var(--verde-fosfo);
+      color: var(--verde-oscuro);
+      box-shadow: 0 8px 20px -8px rgba(180, 227, 61, 0.6);
+    }
+
+    .btn-primary:hover {
+      background-color: #c9f05c;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px -10px rgba(180, 227, 61, 0.7);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--azul-primario);
+      color: var(--azul-primario);
+    }
+
+    .btn-outline:hover {
+      background: var(--azul-primario);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-wsp {
+      background-color: #25d366;
+      color: #0b2b1e;
+      font-weight: 700;
+      box-shadow: 0 10px 20px -8px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-wsp i {
+      font-size: 1.3rem;
+    }
+
+    .btn-wsp:hover {
+      background-color: #20b859;
+      transform: scale(1.02);
+    }
+
+    /* ===== HEADER / NAVBAR ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      padding: 16px 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(27, 107, 143, 0.08);
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      color: var(--verde-oscuro);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: var(--verde-oscuro);
+      background: var(--verde-fosfo);
+      padding: 8px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      list-style: none;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--verde-oscuro);
+      transition: var(--transicion);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--azul-primario);
+      transition: var(--transicion);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: var(--verde-oscuro);
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 60px 0 80px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #ffffff 55%, var(--azul-claro) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--verde-fosfo);
+      color: var(--verde-oscuro);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 6px 16px;
+      border-radius: 40px;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(120deg, var(--azul-primario) 0%, #2b8cb8 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #2c3e4a;
+      margin-bottom: 36px;
+      max-width: 90%;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .hero-image {
+      border-radius: 32px;
+      box-shadow: 0 30px 50px -20px rgba(13, 59, 46, 0.25);
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: var(--transicion);
+      border: 4px solid var(--white);
+    }
+
+    .hero-image:hover {
+      transform: scale(1.01);
+    }
+
+    /* ===== SERVICIOS ===== */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 64px;
+    }
+
+    .section-header h2 {
+      font-size: 2.6rem;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.15rem;
+      color: #3e5561;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: var(--sombra);
+      transition: var(--transicion);
+      border: 1px solid rgba(27, 107, 143, 0.05);
+      text-align: left;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 45px -16px rgba(13, 59, 46, 0.15);
+      border-color: rgba(27, 107, 143, 0.3);
+    }
+
+    .service-icon {
+      font-size: 2.4rem;
+      color: var(--azul-primario);
+      margin-bottom: 24px;
+      background: var(--azul-claro);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #3e5561;
+      font-size: 0.98rem;
+    }
+
+    /* ===== DIFERENCIADORES ===== */
+    .diferenciadores {
+      background: var(--verde-oscuro);
+      color: var(--white);
+      border-radius: 60px 60px 0 0;
+      padding: 100px 0;
+    }
+
+    .diferenciadores .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .diferenciadores h2 {
+      color: var(--white);
+      font-size: 2.5rem;
+      margin-bottom: 32px;
+    }
+
+    .diferenciadores h2 span {
+      color: var(--verde-fosfo);
+    }
+
+    .diferenciador-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .diferenciador-list li {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .diferenciador-list i {
+      color: var(--verde-fosfo);
+      font-size: 1.6rem;
+      margin-top: 4px;
+    }
+
+    .diferenciador-list h4 {
+      color: var(--white);
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .diferenciador-list p {
+      color: #c3d6cd;
+      font-size: 0.98rem;
+    }
+
+    .diferenciadores-img {
+      border-radius: 32px;
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+      border: 3px solid rgba(180, 227, 61, 0.3);
+    }
+
+    /* ===== GALERÍA ===== */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .galeria-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 24px;
+      transition: var(--transicion);
+      box-shadow: var(--sombra);
+      border: 2px solid var(--white);
+    }
+
+    .galeria-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 24px 35px -12px rgba(13, 59, 46, 0.2);
+      border-color: var(--verde-fosfo);
+    }
+
+    /* ===== TESTIMONIOS ===== */
+    .testimonios {
+      background: var(--azul-claro);
+      border-radius: 48px;
+      padding: 80px 0;
+    }
+
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .testimonio-card {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--sombra);
+      border-left: 4px solid var(--verde-fosfo);
+    }
+
+    .testimonio-card i.fa-quote-left {
+      color: var(--azul-primario);
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .testimonio-card p {
+      font-style: italic;
+      color: #2e3b36;
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .testimonio-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .testimonio-author span {
+      font-weight: 700;
+      color: var(--verde-oscuro);
+    }
+
+    .testimonio-author small {
+      display: block;
+      color: #5e7a88;
+      font-weight: 400;
+    }
+
+    .testimonio-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--azul-primario);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--white);
+      font-size: 1.2rem;
+    }
+
+    /* ===== PROCESO ===== */
+    .proceso-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .proceso-paso {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: var(--sombra);
+      border-top: 6px solid var(--azul-primario);
+      transition: var(--transicion);
+    }
+
+    .proceso-paso:hover {
+      transform: translateY(-4px);
+    }
+
+    .proceso-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      color: rgba(13, 59, 46, 0.12);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .proceso-paso h4 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .proceso-paso p {
+      font-size: 0.95rem;
+      color: #3e5561;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #d4e0e8;
+      padding-bottom: 24px;
+    }
+
+    .faq-item h4 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .faq-item h4 i {
+      color: var(--verde-oscuro);
+      font-size: 0.9rem;
+      background: var(--verde-fosfo);
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .faq-item p {
+      color: #3e5561;
+      font-size: 0.98rem;
+      padding-left: 40px;
+    }
+
+    /* ===== CONTACTO ===== */
+    .contacto {
+      background: var(--verde-oscuro);
+      color: var(--white);
+      border-radius: 60px 60px 0 0;
+      padding: 80px 0;
+      margin-top: 60px;
+    }
+
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .contacto h2 {
+      color: var(--white);
+      font-size: 2.6rem;
+      margin-bottom: 24px;
+    }
+
+    .contacto h2 span {
+      color: var(--verde-fosfo);
+    }
+
+    .contacto p {
+      color: #c3d6cd;
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+    }
+
+    .contacto-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .contacto-info div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 1rem;
+      color: #d6e4dd;
+    }
+
+    .contacto-info i {
+      color: var(--verde-fosfo);
+      font-size: 1.4rem;
+      width: 32px;
+    }
+
+    .contacto .btn-wsp {
+      padding: 18px 44px;
+      font-size: 1.1rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--verde-profundo);
+      color: #b7cdc2;
+      padding: 48px 0 24px;
+      border-radius: 0;
+      margin-top: 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo i {
+      color: var(--verde-oscuro);
+      background: var(--verde-fosfo);
+      padding: 6px;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    footer p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .footer-links h5 {
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      transition: var(--transicion);
+    }
+
+    .footer-links a:hover {
+      color: var(--verde-fosfo);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8ba99c;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 2.8rem; }
+      .hero-grid { gap: 40px; }
+      .diferenciadores .container { grid-template-columns: 1fr; gap: 40px; }
+      .diferenciadores-img { height: 320px; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 24px;
+        right: 24px;
+        background: var(--white);
+        padding: 32px;
+        border-radius: 28px;
+        box-shadow: 0 24px 35px -12px rgba(0, 0, 0, 0.15);
+        gap: 24px;
+        align-items: flex-start;
+        z-index: 200;
+      }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-image { height: 400px; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; }
+      .testimonios-grid { grid-template-columns: 1fr; }
+      .proceso-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; text-align: center; }
+      .contacto-info div { justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .section-header h2 { font-size: 2rem; }
+      .galeria-grid { grid-template-columns: 1fr; }
+      .proceso-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .btn { padding: 12px 24px; font-size: 0.95rem; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .nav-cta .btn-outline { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <i class="fas fa-paw"></i> H.V. Armenia
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#diferenciadores">Por qué elegirnos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/573028587474?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota" target="_blank" class="btn btn-primary" style="padding: 10px 24px;">
+          <i class="fab fa-whatsapp"></i> Agendar
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-stethoscope" style="margin-right: 6px;"></i> Cuidado veterinario premium</span>
+        <h1>La salud de tu mascota, <span>en las mejores manos</span></h1>
+        <p>Hospital Veterinario de Armenia: medicina de vanguardia, cirugía especializada y urgencias 24/7 con un trato cálido y profesional.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/573028587474?text=Hola%2C%20necesito%20una%20cita%20veterinaria%20para%20mi%20mascota" target="_blank" class="btn btn-primary">
+            <i class="fab fa-whatsapp"></i> Agenda por WhatsApp
+          </a>
+          <a href="#servicios" class="btn btn-outline">
+            Ver servicios <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <!-- Imagen de veterinaria -->
+        <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?q=80&w=2070&auto=format&fit=crop" alt="Veterinaria atendiendo a un perro con cariño" class="hero-image" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <h2>Servicios integrales para su bienestar</h2>
+        <p>Ofrecemos atención médica completa con tecnología de punta y un equipo que ama lo que hace.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-user-md"></i></div>
+          <h3>Consulta general</h3>
+          <p>Evaluación integral, diagnóstico preventivo y planes de salud personalizados para cada etapa de vida.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-syringe"></i></div>
+          <h3>Vacunación</h3>
+          <p>Esquemas completos y recordatorios oportunos para proteger a tu mascota de enfermedades prevenibles.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-x-ray"></i></div>
+          <h3>Diagnóstico por imagen</h3>
+          <p>Rayos X digitales y ecografía de alta resolución para diagnósticos precisos y rápidos.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-scalpel"></i></div>
+          <h3>Cirugía especializada</h3>
+          <p>Quirófano equipado, anestesia monitoreada y cuidados postoperatorios dedicados.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-clock"></i></div>
+          <h3>Urgencias 24/7</h3>
+          <p>Atención inmediata para emergencias, con personal capacitado y sala de estabilización.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cut"></i></div>
+          <h3>Estética y bienestar</h3>
+          <p>Baño, peluquería y cuidado dermatológico para que tu mascota luzca y se sienta mejor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIADORES -->
+  <section class="diferenciadores" id="diferenciadores">
+    <div class="container">
+      <div>
+        <h2>¿Por qué confiar en <span>nosotros</span>?</h2>
+        <ul class="diferenciador-list">
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Equipo médico certificado</h4>
+              <p>Profesionales con especialización en medicina interna, cirugía y diagnóstico por imagen.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Tecnología de diagnóstico avanzada</h4>
+              <p>Equipos digitales que permiten resultados más precisos y tratamientos oportunos.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Atención personalizada y cálida</h4>
+              <p>Trato cercano, instalaciones cómodas y comunicación constante con el dueño.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4>Urgencias reales 24/7</h4>
+              <p>Disponibilidad permanente para atender emergencias, sin intermediarios.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1964&auto=format&fit=crop" alt="Equipo veterinario en quirófano" class="diferenciadores-img" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <h2>Conoce nuestras instalaciones</h2>
+        <p>Espacios diseñados para el confort y la seguridad de tu mascota.</p>
+      </div>
+      <div class="galeria-grid">
+        <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?q=80&w=2070&auto=format&fit=crop" alt="Consulta veterinaria" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1964&auto=format&fit=crop" alt="Quirófano veterinario" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=2070&auto=format&fit=crop" alt="Perro feliz en veterinaria" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=2070&auto=format&fit=crop" alt="Gato en revisión" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80&w=2070&auto=format&fit=crop" alt="Cuidado de mascotas" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1558929996-da64ba858215?q=80&w=2070&auto=format&fit=crop" alt="Veterinario con perro" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS (ficticios) -->
+  <section class="testimonios section" id="confianza">
+    <div class="container">
+      <div class="section-header">
+        <h2>Dueños que confían en nosotros</h2>
+        <p>Testimonios de ejemplo que reflejan la experiencia de nuestros clientes.</p>
+      </div>
+      <div class="testimonios-grid">
+        <div class="testimonio-card">
+          <i class="fas fa-quote-left"></i>
+          <p>“Desde que llevé a mi perro por una urgencia, no volví a otro veterinario. La atención fue rápida, clara y muy humana.”</p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar">CM</div>
+            <div>
+              <span>Carolina M.</span>
+              <small>Dueña de Toby</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card">
+          <i class="fas fa-quote-left"></i>
+          <p>“Las instalaciones son impecables y el trato con mi gata fue excelente. Se nota el profesionalismo y el cariño.”</p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar">JR</div>
+            <div>
+              <span>Jorge R.</span>
+              <small>Dueño de Luna</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card">
+          <i class="fas fa-quote-left"></i>
+          <p>“El diagnóstico fue preciso y el seguimiento postoperatorio fue constante. Recomiendo totalmente el hospital.”</p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar">LP</div>
+            <div>
+              <span>Laura P.</span>
+              <small>Dueña de Max</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-header">
+        <h2>Así de fácil es atenderse con nosotros</h2>
+        <p>En cuatro pasos, tu mascota recibe la atención que merece.</p>
+      </div>
+      <div class="proceso-grid">
+        <div class="proceso-paso">
+          <div class="proceso-num">01</div>
+          <h4>Escríbenos</h4>
+          <p>Contáctanos por WhatsApp y cuéntanos qué necesita tu mascota.</p>
+        </div>
+        <div class="proceso-paso">
+          <div class="proceso-num">02</div>
+          <h4>Agenda</h4>
+          <p>Coordinamos fecha y hora según disponibilidad y urgencia.</p>
+        </div>
+        <div class="proceso-paso">
+          <div class="proceso-num">03</div>
+          <h4>Consulta</h4>
+          <p>Recibimos a tu mascota con evaluación completa y diagnóstico.</p>
+        </div>
+        <div class="proceso-paso">
+          <div class="proceso-num">04</div>
+          <h4>Seguimiento</h4>
+          <p>Te acompañamos con indicaciones y controles posteriores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="background: var(--azul-claro); border-radius: 48px; margin: 40px 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Preguntas frecuentes</h2>
+        <p>Resolvemos las dudas más comunes antes de tu visita.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4><i class="fas fa-question"></i> ¿Atienden urgencias fuera de horario?</h4>
+          <p>Sí, contamos con servicio de urgencias 24 horas, los 7 días de la semana. Llama o escribe antes de venir para preparar tu llegada.</p>
+        </div>
+        <div class="faq-item">
+          <h4><i class="fas fa-question"></i> ¿Necesito cita previa?</h4>
+          <p>Para consultas generales recomendamos agendar por WhatsApp. Las urgencias se atienden por orden de llegada según gravedad.</p>
+        </div>
+        <div class="faq-item">
+          <h4><i class="fas fa-question"></i> ¿Trabajan con todas las razas y especies?</h4>
+          <p>Atendemos principalmente perros y gatos. Para especies exóticas, consulta disponibilidad antes de agendar.</p>
+        </div>
+        <div class="faq-item">
+          <h4><i class="fas fa-question"></i> ¿Aceptan pagos con tarjeta?</h4>
+          <p>Sí, aceptamos efectivo, tarjetas débito/crédito y transferencias. Consulta por planes de pago para procedimientos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="container contacto-grid">
+      <div>
+        <h2>Agenda la cita de tu mascota <span>hoy mismo</span></h2>
+        <p>Estamos listos para cuidar de tu mejor amigo. Escríbenos y recibe orientación inmediata.</p>
+        <div class="contacto-info">
+          <div><i class="fas fa-map-marker-alt"></i> Calle 21 #26-25, Armenia, Quindío</div>
+          <div><i class="fas fa-phone-alt"></i> +57 302 8587474</div>
+          <div><i class="fas fa-clock"></i> Urgencias 24/7 · Consulta con cita</div>
+        </div>
+        <a href="https://wa.me/573028587474?text=Hola%2C%20quiero%20agendar%20una%20cita%20para%20mi%20mascota%20en%20el%20Hospital%20Veterinario%20de%20Armenia" target="_blank" class="btn btn-wsp">
+          <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+        </a>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?q=80&w=1974&auto=format&fit=crop" alt="Mascota feliz después de atención veterinaria" style="border-radius: 32px; height: 320px; width: 100%; object-fit: cover; border: 4px solid var(--verde-fosfo);" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><i class="fas fa-paw"></i> H.V. Armenia</div>
+          <p>Hospital Veterinario de Armenia. Medicina, cirugía y urgencias con calidez profesional. Calle 21 #26-25, Armenia, Colombia.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Enlaces</h5>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#diferenciadores">Por qué elegirnos</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Contacto</h5>
+          <ul>
+            <li><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> +57 302 8587474</li>
+            <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Calle 21 #26-25</li>
+            <li><i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp directo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Hospital Veterinario de Armenia — Demo creada por Simple Web. Los testimonios e imágenes son ejemplos ficticios.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil funcional
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      if (navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Cerrar menú al hacer clic en un enlace (en móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+      });
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', function(event) {
+      if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+      }
+    });
+  </script>
+</body>
+</html>
